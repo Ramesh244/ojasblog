@@ -1,0 +1,53 @@
+.nav-link {
+    background-color: chartreuse;
+    margin:10px;
+    border-radius: 20px;
+}
+
+.logo {
+    height:100px;
+    width:100px;
+    border-radius: 50px;
+}
+.navbar-nav {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+
+}
+.nadhi {
+    display:flex;
+    justify-content: space-around;
+
+}
+.nidhi {
+    display:flex;
+    justify-content: space-around;
+
+}
+.sub {
+    background-color: lemonchiffon;
+    height:300px;
+    width:300px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: fixed;
+    margin-top: 100px;
+    margin:10px;
+    padding:20px ;
+    border-radius: 20px;
+
+}
+.log-container {
+    background-image: url("{{ab}}");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height:100vh;
+    width:100vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

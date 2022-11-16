@@ -1,0 +1,35 @@
+{% include 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .info {
+      color: brown;
+      font-weight: bolder;
+
+    }
+  </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Dashboard</title>
+</head>
+<body>
+ <h1>Dashboard Page</h1>
+  <h2>Welcome {{name}}</h2>
+<form action="ojas/edit" method="POST">
+  {% csrf_token %}
+  {{form.as_p}} 
+  <a href="{% url 'blogpage' %}"><input type="button" value="Add Blog"></a> <br><br>
+</form>
+{% if messages %}
+           {% for message in messages %}
+           <h2 {% if message.tags %} class="{{message.tags}}" {% endif %}> {{message}} </h2>
+           {% endfor %}
+           {% endif %}
+
+ <a href="{% url 'logoutpage' %}">Logout</a>
+
+</body>
+{% include 'footer.html' %}
+</html>

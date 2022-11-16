@@ -1,0 +1,51 @@
+{% include 'navbar.html' %}
+
+<div class="col-sm-4">
+    <h4 class="text-center alert alert-secondary">Add blog Details</h4>
+    <form action="" method="POST">
+     {% csrf_token %}
+     {{form.as_p}}
+     <input type="submit" class="btn btn-success" value="Add blog">
+   </form>
+   </div>
+  
+   <div class="col-sm-7 offset-1">
+    <h4 class="text-center alert alert-secondary">Show blog  Information Here</h4>
+    {% if ram %}
+     <table class="table table-hover">
+       <thead>
+         <tr>
+           <th scope="col">ID</th>
+           <th scope="col">heading</th>
+           <th scope="col">paragram</th>
+         
+         </tr>
+       </thead>
+       <tbody>
+        {% for i in ram %}
+         <tr>
+           <th scope="row">{{i.id}}</th>
+           <td>{{i.heading}}</td>
+           <td>{{i.paragram}}</td>
+          
+           <td>
+      <a href="{% url 'updateing' i.id %}" class="btn btn-info btn-sm">Edit</a> 
+          <form action="{% url 'deleting' i.id %}" method="post" class="d-inline"> 
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary btn-sm" value="Delete">
+           </form> 
+           </td>
+         </tr>
+        {% endfor %}
+       </tbody>
+     </table>
+  
+    {% else %}
+     <h4 class="text-center alert alert-warning">No Records</h4>
+    {% endif %}
+    </div>
+    
+    </div>
+   {% include 'footer.html' %}
+   
+   
